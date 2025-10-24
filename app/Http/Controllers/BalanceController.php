@@ -12,7 +12,7 @@ use Exception;
 
 class BalanceController extends Controller
 {
-    /// Внедряем (Dependency Injection) наш сервис в контроллер
+
     public function __construct(protected BalanceService $balanceService)
     {
     }
@@ -102,10 +102,10 @@ class BalanceController extends Controller
 
     // 4. Получение баланса
 
-    public function getBalance(int $user_id) // $user_id придет из URL
+    public function getBalance(int $user_id)
     {
         try {
-            // (Базовая валидация ID из URL)
+            
             if ($user_id <= 0) {
                  return response()->json(['error' => 'Некорректный ID пользователя'], 400);
             }

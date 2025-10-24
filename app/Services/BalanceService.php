@@ -154,7 +154,7 @@ class BalanceService
                 'related_user_id' => $fromUserId
             ]);
 
-            // fresh() перезагружает данные из БД
+
             return ['from' => $balanceFrom->fresh(), 'to' => $balanceTo->fresh()];
         });
     }
@@ -166,7 +166,7 @@ class BalanceService
     {
         User::findOrFail($userId);
 
-        
+
         $balance = Balance::where('user_id', $userId)->value('balance');
 
 
